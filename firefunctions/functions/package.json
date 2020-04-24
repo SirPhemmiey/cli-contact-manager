@@ -8,7 +8,9 @@
         "shell": "npm run build && firebase functions:shell",
         "start": "npm run shell",
         "deploy": "tsc && firebase deploy --only functions",
-        "logs": "firebase functions:log"
+        "logs": "firebase functions:log",
+        "list": "firebase functions:list",
+        "currentProject": "firebase functions:log --project contactmanager-cli",
     },
     "engines": {
         "node": "10"
