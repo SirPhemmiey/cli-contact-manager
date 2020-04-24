@@ -4,9 +4,11 @@
     "version": "1.0.0",
     "main": "index.js",
     "bin": "./contact.js",
-    "start": "nodemon --exec ts-node --contact.ts",
-    "ts-node": "ts-node contact.ts",
-    "build": "tsc",
+    "scripts": {
+        "start": "nodemon --exec ts-node --contact.ts",
+        "ts-node": "ts-node contact.ts",
+        "build": "tsc"
+    },
     "license": "MIT",
     "dependencies": {
         "axios": "^0.19.2",
