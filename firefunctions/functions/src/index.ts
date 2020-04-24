@@ -49,7 +49,7 @@ app.delete('/:id', async(request: express.Request, response: express.Response, n
 });
 
 app.get('/:id', async(request: express.Request, response: express.Response, next: express.NextFunction) => {
-    await admin.database().ref('/contacts'+request.params.id).once('value', (data) => {
+    await admin.database().ref('/contacts/'+request.params.id).once('value', (data) => {
         const sn = data.val();
         response.send({
             msg: sn

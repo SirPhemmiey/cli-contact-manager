@@ -8,7 +8,7 @@ const url: string = "https://us-central1-contactmanager-cli.cloudfunctions.net";
 export const addContact = async(answers: ContactForm) => {
    try {
     const spinner = ora('Adding Contact').start();
-    let response = await axios.post(`${url}/addContact`, answers);
+    await axios.post(`${url}/addContact`, answers);
     spinner.stop();
     console.log(chalk.magentaBright('New Contact added'));
    }
@@ -20,7 +20,7 @@ export const addContact = async(answers: ContactForm) => {
 export const getContact = async (id: number) => {
     try {
         const spinner = ora('Fetching Contact').start();
-        let response = await axios.get(`${url}/getContact/${id}`);
+        const response = await axios.get(`${url}/getContact/${id}`);
         spinner.clear();
         spinner.stop();
         const obj = response.data;
@@ -60,8 +60,8 @@ export const deleteContact = async (id: number) => {
 
 export const getContactList = async() => {
     try {
-        const spinner = ora('Fetching All Contacts ...').start();
-    let response = await axios.get(`${url}/getContactList`);
+    const spinner = ora('Fetching All Contacts ...').start();
+    const response = await axios.get(`${url}/getContactList`);
     spinner.stop()
     const obj = response.data.res;
     console.log(chalk.green('**********=== Contacts List===**********'));

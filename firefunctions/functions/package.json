@@ -10,7 +10,7 @@
         "deploy": "tsc && firebase deploy --only functions",
         "logs": "firebase functions:log",
         "list": "firebase functions:list",
-        "currentProject": "firebase functions:log --project contactmanager-cli",
+        "currentProject": "firebase functions:log --project contactmanager-cli"
     },
     "engines": {
         "node": "10"
